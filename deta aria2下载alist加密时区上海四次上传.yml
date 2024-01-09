@@ -38,19 +38,6 @@ jobs:
            docker-images: false
            swap-storage: true
 
-      - name: Set timezone to Shanghai
-        run: |
-          sudo timedatectl set-timezone Asia/Shanghai
-          echo "Timezone set to Shanghai"
-
-      - name: Print current time
-        run: date
-
-      - name: Create folder with current time
-        run: |
-          current_time1=$(date +"%Y%m%d")
-          echo "Folder created with name: $current_time1"
-
 
       - name: 第1次安装Aria2
         run: sudo apt install -y aria2     
