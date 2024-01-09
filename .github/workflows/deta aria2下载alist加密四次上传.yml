@@ -1,5 +1,4 @@
 name: detaaria2下载alist加密4次年份上传.yml
-
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -8,11 +7,10 @@ on:
         description: '保存目录'
         required: true
         default: '202312'
-
 jobs:
   Onedrive:
     runs-on: ubuntu-latest
-  steps:
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -36,7 +34,6 @@ jobs:
           large-packages: true
           docker-images: false
           swap-storage: true
-
       - name: Set timezone to Shanghai
         run: |
           sudo timedatectl set-timezone Asia/Shanghai
