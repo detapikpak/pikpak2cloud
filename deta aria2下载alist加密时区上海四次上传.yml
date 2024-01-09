@@ -9,7 +9,7 @@ on:
         default: '202312'
 
 jobs:
-  Onedrive:
+  Onedriver:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
