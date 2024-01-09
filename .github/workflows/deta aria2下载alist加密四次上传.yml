@@ -1,4 +1,5 @@
-name: detaaria2下载alist加密4次上传.yml
+name: detaaria2下载alist加密4次年份上传.yml
+
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -13,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 
       - name: gengxing
         run: |
-           sudo apt-get update          
+          sudo apt-get update          
       - name: 检查空间使用情况
         run: |
           echo "Free space:"
@@ -28,16 +29,13 @@ jobs:
       - name: Free Disk Space (Ubuntu)
         uses: jlumbroso/free-disk-space@main
         with:
-
-        # all of these default to true, but feel free to set to
-        # "false" if necessary for your workflow
-           tool-cache: true
-           android: true
-           dotnet: true
-           haskell: true
-           large-packages: true
-           docker-images: false
-           swap-storage: true
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: false
+          swap-storage: true
 
       - name: Set timezone to Shanghai
         run: |
@@ -51,7 +49,6 @@ jobs:
         run: |
           current_time1=$(date +"%Y%m%d")
           echo "Folder created with name: $current_time1"
-
 
       - name: 第1次安装Aria2
         run: sudo apt install -y aria2     
